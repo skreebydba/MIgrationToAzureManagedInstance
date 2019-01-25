@@ -44,9 +44,11 @@ BEGIN
 		Initialize @loopcount
 		Set @noexc = 1 to PRINT dynamic SQL command
 		Set @noexec = 0 to execute dynamic SQL command  */
-	SELECT @parm = CONCAT(N'@URL = ''', @url, ''', @Credential = ''', @credential, ''''),
+	SELECT @parm = CONCAT(N'@URL = ''', @url, ''', @Credential = ''', @credential, ''', @CopyOnly = ''Y'''),
 	@loopcount = 1,
 	@noexec = 1;
+
+	SELECT @parm;
 
 	/*	Get list of backup jobs that contain an @Directory parameter
 		NOTE - Change the value in the LIKE clause to return different jobs  */
